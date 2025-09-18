@@ -1,0 +1,140 @@
+/* Main footer wrapper with animated gradient */
+.agrowmart-footer {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(30px, 5vw, 60px) 20px;
+  color: white;
+  background: linear-gradient(270deg, #09570d, #0f8d13, #2d8b07);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+
+/* Gradient animation keyframes */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Wave effect at top of footer */
+.agrowmart-footer::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 200%;
+  height: 80px;
+  background: rgba(87, 226, 23, 0.089);
+  border-radius: 100%;
+  animation: wave 6s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Social icons */
+.social-icons {
+  margin-bottom: clamp(15px, 3vw, 25px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 20px);
+}
+.social-icons a {
+  color: white;
+  font-size: clamp(16px, 2vw, 22px);
+  transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+  /* color: rgb(47,211,74); */
+  color: #885804;
+  transform: scale(1.2);
+}
+
+/* Footer links */
+.footer-links {
+  margin: clamp(15px, 3vw, 25px) 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 20px);
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(14px, 1.5vw, 18px);
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  /* color: rgb(47,211,74); */
+  color: #885804;
+}
+
+
+.footer-logo {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  margin: 0 auto;           /* center block */
+  text-align: center;
+}
+
+/* Footer logo */
+.footer-logo img {
+  height: clamp(40px, 5vw, 60px);
+  margin-top: 10px;
+   min-height: 40px; /* ensures logo never shrinks too small */
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  margin-top: clamp(15px, 3vw, 25px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: clamp(10px, 2vw, 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2vw, 15px);
+  font-size: clamp(12px, 1.2vw, 14px);
+  flex-wrap: wrap;
+}
+
+.scroll-top {
+  position: fixed;       /* Fixes button on viewport */
+  bottom: 20px;          /* 20px from bottom */
+  right: 20px;           /* 20px from right */
+  background: #fff;
+  border: 2px solid rgb(47,211,74);
+  color: rgb(47,211,74);
+  border-radius: 50%;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  z-index: 9999;
+}
+.scroll-top:hover {
+  background: rgb(47,211,74);
+  color: black;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-links a {
+    margin: 5px 0;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .social-icons {
+    gap: 12px;
+  }
+}
